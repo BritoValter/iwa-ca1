@@ -2,7 +2,7 @@
 <?xml version="1.0"?> 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 <xsl:template match="/">
-<table id="menuTable" border="1" class="indent">
+ <!--<table id="menuTable" border="1" class="indent">
 	<thead>
 		<tr>
 			<th colspan="3">Courses Menu</th>
@@ -37,7 +37,21 @@
 				</tr>
 			</xsl:for-each>
 		</xsl:for-each>
-	</tbody>
+	</tbody>	
 </table>
+-->
+
+<div id="menu_flutuante">
+	<xsl:for-each select="//section/entry">
+		<ul id="gallery">
+		
+			<li "{position()}">
+				<xsl:value-of select="item"/>
+			</li>
+				
+		</ul>
+	</xsl:for-each>
+</div>
+
 </xsl:template>
 </xsl:transform>
