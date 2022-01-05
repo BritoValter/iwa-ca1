@@ -6,8 +6,8 @@
 			<head>
 				<title>Class in Video</title>
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>				
-        		<link rel="stylesheet" href="css/PaddysCafe.css" />
-            	<script type="text/javascript" src="js/PaddysCafe.js">x</script>
+        		<link rel="stylesheet" href="css/classInVideo.css" />
+            	<script type="text/javascript" src="js/classInVideo.js">x</script>
 			</head>
 			<body>
 				<h2><img src="img/logo.png" alt="Javaco Tea Logo" width="58" height="100"/>Welcome to Class in Video</h2>
