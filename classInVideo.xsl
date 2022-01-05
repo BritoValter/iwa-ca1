@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
-	<xsl:output method="html" doctype-public="XSLT-compat" omit-xml-declaration="yes" encoding="UTF-8" indent="yes"/>
-	<xsl:template match="/">
+<?xml version="1.0"?> 
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:template match="/">
 		<html>
 			<head>
 				<title>Class in Video</title>
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>				
-        		<link rel="stylesheet" href="css/classInVideo.css" />
+        		<link href="css/classInVideo.css" rel="stylesheet" />
             	<script type="text/javascript" src="js/classInVideo.js">x</script>
 			</head>
 			<body>
@@ -52,9 +52,9 @@
 				<form class="indent">
 					<p><input type="button" name="btnCalcBill" value="Calculate Bill" id="calcBill"/>
                 Total: €
-                <input type="text" name="txtBillAmt"/><input type="checkbox" name="cbOpts" value="isVeg" id="showVeg"/><label for="showVeg">Highlight BestSellers </label></p>
+                <input type="text" name="txtBillAmt"/><input type="checkbox" name="cbOpts" value="" id="ShowBest"/><label for="ShowBest">Highlight BestSellers </label></p>
 				</form>
 			</body>
 		</html>
 	</xsl:template>
-</xsl:transform> 
+</xsl:transform>
