@@ -8,6 +8,8 @@ const   express = require('express'), //Allows to respond to HTTP requests, defi
 const   router = express(), //Instantiating Express
         server = http.createServer(router); //Instantiating the server
 router.use(express.static(path.resolve(__dirname,'views'))); //Serving static content from "views" folder
+router.use(express.json());
+
 function XMLtoJSON(filename, cb){
         let filepath = path.normalize(path.join(__dirname, filename));
         fs.readFile(filepath, 'utf8', function(err, xmlStr){
@@ -43,40 +45,34 @@ router.get('/get/html', function(req, res) {
         res.end(result.toString()); //Serve back the user
     
     });
-    
 router.post('/post/json', function(req, res) {
 
-console.log(req.body);
+    console.log(req.body);
 
-router.post('/post/json', function(req, res) {
+    function appendJSON(obj) {
 
-        console.log(req.body);
-    
-        function appendJSON(obj) {
-    
-            console.log(JSON.stringify(obj, null, " "))
-    
-            XMLtoJSON('classInVideo.xml', function (err, result){
-                if (err) throw (err);
-    
-                result.menu.section[obj.sec_n].entry.push({'item': obj.item, 'price': obj.price});
-    
-                console.log(JSON.stringify(result, null, " "));
-    
-                JSONtoXML('classInVideo.xml', result, function(err){
-                    if (err) console.log(err);
-                });
-    
+        console.log(JSON.stringify(obj, null, " "))
+
+        XMLtoJSON('classInVideo.xml', function (err, result){
+            if (err) throw (err);
+
+            result.menu.section[obj.sec_n].entry.push({'item': obj.item, 'price': obj.price});
+
+            console.log(JSON.stringify(result, null, " "));
+
+            JSONtoXML('classInVideo.xml', result, function(err){
+                if (err) console.log(err);
             });
-    
-        };
-    
-        appendJSON(req.body);
-    
-        res.redirect('back');
-    
-    });
 
+        });
+
+    };
+
+    appendJSON(req.body);
+
+    res.redirect('back');
+
+});
 server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
         const addr = server.address();
         console.log('Server listening at', addr.address + ':' + addr.port)

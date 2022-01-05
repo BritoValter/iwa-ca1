@@ -1,73 +1,77 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <menu>
-    <section name="iT">
-        <entry>
-            <item>Hardware</item>
-            <price>125.30€</price>
-        </entry>
-        <entry>
-            <item>Network security</item>
-            <price>110.45€</price>
-        </entry>
-        <entry bestSeller="true">
-            <item>Complete javascript course</item>
-            <price>120€</price>
-        </entry>        
-    </section>
-    <section name="web design">
-        <entry>
-            <item>CSS</item>
-            <price>110.50€</price>
-        </entry>
-        <entry>
-            <item>Photoshop cs6</item>
-            <price>80.60€</price>
-        </entry>
-        <entry bestSeller="true">
-            <item>HTML5</item>
-            <price>100€</price>
-        </entry>        
-    </section>
-    <section  name="marketing">
-        <entry>
-            <item>leadership</item>
-            <price>125€</price>
-        </entry>
-        <entry>
-            <item>Social Media Marketing </item>
-            <price>129.20</price>
-        </entry>
-        <entry bestSeller="true">
-            <item>FrenchToasDigital Marketingt</item>
-            <price>105.30€</price>
-        </entry>        
-    </section>
-    <section name="culinary">
-        <entry>
-            <item>Cake Baking Courses</item>
-            <price>120€</price>
-        </entry>
-        <entry>
-            <item>Bread Baking Courses</item>
-            <price>107.50€</price>
-        </entry>
-        <entry bestSeller="true">
-            <item>Bartending Courses</item>
-            <price>118.10€</price>
-        </entry>        
-    </section>
-    <section name="Business">
-        <entry>
-            <item>Business Analytics </item>
-            <price>120€</price>
-        </entry>
-        <entry>
-            <item>Human Resources</item>
-            <price>135.10€</price>
-        </entry>
-        <entry bestSeller="true">
-            <item>Sales</item>
-            <price>105.15€</price>
-        </entry>        
-    </section>
+  <section name="IT">
+    <entry>
+      <item>Hardware</item>
+      <price>125.30€</price>
+    </entry>
+    <entry>
+      <item>Network security</item>
+      <price>110.45€</price>
+    </entry>
+    <entry bestSeller="true">
+      <item>Complete javascript course</item>
+      <price>120€</price>
+    </entry>
+    <entry>
+      <item>Cloud</item>
+      <price>100.00</price>
+    </entry>
+  </section>
+  <section name="Web Design">
+    <entry>
+      <item>CSS</item>
+      <price>110.50€</price>
+    </entry>
+    <entry>
+      <item>Photoshop cs6</item>
+      <price>80.60€</price>
+    </entry>
+    <entry bestSeller="true">
+      <item>HTML5</item>
+      <price>100€</price>
+    </entry>
+  </section>
+  <section name="Marketing">
+    <entry>
+      <item>leadership</item>
+      <price>125€</price>
+    </entry>
+    <entry>
+      <item>Social Media Marketing </item>
+      <price>129.20</price>
+    </entry>
+    <entry bestSeller="true">
+      <item>FrenchToasDigital Marketingt</item>
+      <price>105.30€</price>
+    </entry>
+  </section>
+  <section name="Culinary">
+    <entry>
+      <item>Cake Baking Courses</item>
+      <price>120€</price>
+    </entry>
+    <entry>
+      <item>Bread Baking Courses</item>
+      <price>107.50€</price>
+    </entry>
+    <entry bestSeller="true">
+      <item>Bartending Courses</item>
+      <price>118.10€</price>
+    </entry>
+  </section>
+  <section name="Business">
+    <entry>
+      <item>Business Analytics </item>
+      <price>120€</price>
+    </entry>
+    <entry>
+      <item>Human Resources</item>
+      <price>135.10€</price>
+    </entry>
+    <entry bestSeller="true">
+      <item>Sales</item>
+      <price>105.15€</price>
+    </entry>
+  </section>
 </menu>
