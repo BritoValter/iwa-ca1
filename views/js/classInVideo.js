@@ -26,9 +26,9 @@ function calculateBill(idMenuTable) {
     return Math.round(fBillTotal * 100.0) / 100.0;
 };
 // This function either turns on or off the row highlighting for bestSeller
-// items (depending on the value of bShowVeg)
-function highlightbestSeller(idTable, bShowVeg) {
-    // if bShowVeg is true, then we're highlighting bestSeller
+// items (depending on the value of bShowBest)
+function highlightbestSeller(idTable, bShowBest) {
+    // if bShowBest is true, then we're highlighting bestSeller
     //	meals, otherwise we're unhighlighting them.
     var i = 0;
     var oTable = document.getElementById(idTable);
@@ -38,7 +38,7 @@ function highlightbestSeller(idTable, bShowVeg) {
     // "bestSeller" attribute on it.
     for (i = 0; i < aTRs.length; i++) {
         if (aTRs[i].getAttribute('bestSeller') && aTRs[i].getAttribute('bestSeller') == "true") {
-            if (bShowVeg) {
+            if (bShowBest) {
                 aTRs[i].style.backgroundColor = "lightGreen";
             } else {
                 aTRs[i].style.backgroundColor = "";
@@ -62,7 +62,7 @@ window.addEventListener("load", function() {
     document.querySelector("#calcBill").addEventListener("click", function() {
         document.forms[0].txtBillAmt.value = calculateBill('menuTable');
     });
-    document.querySelector("#showVeg").addEventListener("click", function() {
+    document.querySelector("#ShowBest").addEventListener("click", function() {
         highlightbestSeller('menuTable', this.checked);
     });
 });
