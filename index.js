@@ -8,7 +8,22 @@ const   express = require('express'), //Allows to respond to HTTP requests, defi
 const   router = express(), //Instantiating Express
         server = http.createServer(router); //Instantiating the server
 router.use(express.static(path.resolve(__dirname,'views'))); //Serving static content from "views" folder
-router.get('/', function(req, res) {
+function XMLtoJSON(filename, cb){
+        let filepath = path.normalize(path.join(__dirname, filename));
+        fs.readFile(filepath, 'utf8', function(err, xmlStr){
+            if (err) throw (err);
+            xml2js.parseString(xmlStr, {}, cb);
+        });
+    };
+    
+    function JSONtoXML(filename, obj, cb) {
+        let filepath = path.normalize(path.join(__dirname, filename));
+        let builder = new xml2js.Builder();
+        let xml = builder.buildObject(obj);
+        fs.unlinkSync(filepath);
+        fs.writeFile(filepath, xml, cb);
+    };
+router.get('/get/html', function(req, res) {
 
         res.writeHead(200, {'Content-Type' : 'text/html'}); //Tell the user that the resource exists and which type that is
     
@@ -26,6 +41,39 @@ router.get('/', function(req, res) {
         console.log(result);
     
         res.end(result.toString()); //Serve back the user
+    
+    });
+    
+router.post('/post/json', function(req, res) {
+
+console.log(req.body);
+
+router.post('/post/json', function(req, res) {
+
+        console.log(req.body);
+    
+        function appendJSON(obj) {
+    
+            console.log(JSON.stringify(obj, null, " "))
+    
+            XMLtoJSON('classInVideo.xml', function (err, result){
+                if (err) throw (err);
+    
+                result.menu.section[obj.sec_n].entry.push({'item': obj.item, 'price': obj.price});
+    
+                console.log(JSON.stringify(result, null, " "));
+    
+                JSONtoXML('classInVideo.xml', result, function(err){
+                    if (err) console.log(err);
+                });
+    
+            });
+    
+        };
+    
+        appendJSON(req.body);
+    
+        res.redirect('back');
     
     });
 
