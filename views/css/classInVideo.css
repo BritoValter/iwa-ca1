@@ -51,28 +51,9 @@ margin:0px;
 }
 #menu_flutuante li{
 float:left;
-line-height:80px;
-height:80px;
-text-align:center;
-font-weight:bold;
-color:#000000;
-list-style:none; 
-margin:0px;
-padding-right:5px;
-padding-left:10px;
-margin-left:5px;
-border-top:5px solid #FFFFFF;
-border-bottom:5px solid #FFFFFF;
-background:#FFFFFF;
-cursor:pointer;
-transition:all 0.1s linear;
--moz-transition:all 0.1s linear;
--webkit-transition:all 0.1s linear;
--o-transition:all 0.1s linear;
-}
-#menu_flutuante li:hover{
-line-height:80px;
-height:80px;
-border-top:5px solid #05005F;
-border-bottom:5px solid #05005F;
+width: 200px;
+height: 300px;
+margin: 10px;
+border: 2px;
+
 }

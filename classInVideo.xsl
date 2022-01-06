@@ -46,7 +46,14 @@
 		<ul id="gallery">
 		
 			<li "{position()}">
-				<xsl:value-of select="item"/>
+				<xsl:value-of select="item"/><br/>
+				<!--<img class="card-img-top" src="img/logo.png" alt="..." />-->
+				<xsl:value-of select="image"/>
+				<xsl:value-of select="price"/>
+				<xsl:value-of select="price"/>
+				<div class="text-center">
+					<a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+				</div>
 			</li>
 				
 		</ul>
