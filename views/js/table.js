@@ -1,3 +1,4 @@
+//function injects the table into HTML file
 function draw_table(){
     $("#results").empty();
     $.getHTMLuncached = function(url) {
@@ -15,6 +16,7 @@ function draw_table(){
     $.getHTMLuncached("/get/html");
 };
 
+//function inserts a row in to the table with the data collected from the user
 function append(){
     $.ajax({
         type: "POST",
@@ -27,6 +29,7 @@ function append(){
     });
 };
 
+//function selects a row from the table that the user wants to delete
 function select_row()
 {
     $("#menuTable tbody tr[id]").click(function ()
@@ -40,6 +43,7 @@ function select_row()
 
 };
 
+//function deletes a row from the table
 function delete_row(sec, ent){
     $("#delete").click(function()
     {

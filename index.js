@@ -7,10 +7,11 @@ const   express = require('express'), //Allows to respond to HTTP requests, defi
         xsltProcess = require('xslt-processor').xsltProcess; //Processing XSLT
 const   router = express(), //Instantiating Express
         server = http.createServer(router); //Instantiating the server
-        
-router.use(express.static(path.resolve(__dirname,'views'))); //Serving static content from "views" folder
-router.use(express.json());
 
+router.use(express.static(path.resolve(__dirname,'views'))); //Serving static content from "views" folder
+router.use(express.json());//Tell the server to work with json 
+
+//function converts XML to JSON
 function XMLtoJSON(filename, cb){
         let filepath = path.normalize(path.join(__dirname, filename));
         fs.readFile(filepath, 'utf8', function(err, xmlStr){
@@ -18,7 +19,8 @@ function XMLtoJSON(filename, cb){
             xml2js.parseString(xmlStr, {}, cb);
         });
     };
-    
+
+    //function converts JSON to XML
     function JSONtoXML(filename, obj, cb) {
         let filepath = path.normalize(path.join(__dirname, filename));
         let builder = new xml2js.Builder();
@@ -26,6 +28,8 @@ function XMLtoJSON(filename, cb){
         fs.unlinkSync(filepath);
         fs.writeFile(filepath, xml, cb);
     };
+
+ //function send the html request answer
 router.get('/get/html', function(req, res) {
 
         res.writeHead(200, {'Content-Type' : 'text/html'}); //Tell the user that the resource exists and which type that is
@@ -46,6 +50,8 @@ router.get('/get/html', function(req, res) {
         res.end(result.toString()); //Serve back the user
     
     });
+
+ //function send the html request answer
 router.post('/post/json', function(req, res) {
 
     console.log(req.body);
@@ -103,7 +109,7 @@ router.post('/post/delete', function(req, res){
     res.redirect('back');
 
 });
-
+// server listening on port 3000
 server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
         const addr = server.address();
         console.log('Server listening at', addr.address + ':' + addr.port)

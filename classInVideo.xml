@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<menu>
+<menu>  <!-- root element -->
   <section name="IT">
     <entry>
       <item>Hardware</item>
@@ -93,4 +93,4 @@
       <image>teste</image>
     </entry>
   </section>
-</menu>
+</menu> <!-- close root element -->
