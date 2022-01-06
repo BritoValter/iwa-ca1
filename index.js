@@ -7,6 +7,7 @@ const   express = require('express'), //Allows to respond to HTTP requests, defi
         xsltProcess = require('xslt-processor').xsltProcess; //Processing XSLT
 const   router = express(), //Instantiating Express
         server = http.createServer(router); //Instantiating the server
+        
 router.use(express.static(path.resolve(__dirname,'views'))); //Serving static content from "views" folder
 router.use(express.json());
 

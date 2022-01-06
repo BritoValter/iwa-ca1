@@ -2,32 +2,25 @@
 <?xml version="1.0"?> 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 <xsl:template match="/">
- <!--<table id="menuTable" border="1" class="indent">
+<table id="menuTable" border="1" class="indent">
 	<thead>
-		<tr>
+		<tr id="item">
 			<th colspan="3">Courses Menu</th>
 		</tr>
-		<tr>
-			<th>Select</th>
+		<tr>			
 			<th>Item</th>
 			<th>Price</th>
 		</tr>
 	</thead>
 	<tbody>
 		<xsl:for-each select="//section">
-			<tr>
+			<tr id="item">
 				<td colspan="3">
 					<xsl:value-of select="@name"/>
 				</td>
 			</tr>
 			<xsl:for-each select="entry">
-				<tr id="{position()}">
-					<xsl:attribute name="bestSeller">
-						<xsl:value-of select="boolean(@bestSeller)"/>
-					</xsl:attribute>
-					<td align="center">
-						<input name="item0" type="checkbox"/>
-					</td>
+				<tr id="{position()}">				
 					<td>
 						<xsl:value-of select="item"/>
 					</td>
@@ -39,26 +32,6 @@
 		</xsl:for-each>
 	</tbody>	
 </table>
--->
-
-<div id="menu_flutuante">
-	<xsl:for-each select="//section/entry">
-		<ul id="gallery">
-		
-			<li "{position()}">
-				<xsl:value-of select="item"/><br/>
-				<!--<img class="card-img-top" src="img/logo.png" alt="..." />-->
-				<xsl:value-of select="image"/>
-				<xsl:value-of select="price"/>
-				<xsl:value-of select="price"/>
-				<div class="text-center">
-					<a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
-				</div>
-			</li>
-				
-		</ul>
-	</xsl:for-each>
-</div>
-
+ 
 </xsl:template>
 </xsl:transform>

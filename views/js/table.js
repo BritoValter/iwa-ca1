@@ -29,14 +29,15 @@ function append(){
 
 function select_row()
 {
-    $("#menuTable li[id]").click(function ()
+    $("#menuTable tbody tr[id]").click(function ()
     {
         $(".selected").removeClass("selected");
         $(this).addClass("selected");
-        var sec = $(this).prevAll("li").children("td[colspan='3']").length - 1;
+        var sec = $(this).prevAll("tr").children("td[colspan='3']").length - 1;
         var ent = $(this).attr("id") - 1;
         delete_row(sec, ent);
     })
+
 };
 
 function delete_row(sec, ent){
